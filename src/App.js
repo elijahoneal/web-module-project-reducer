@@ -1,5 +1,5 @@
 import React, { useReducer } from 'react';
-import {addOne, applyNumber, changeOperation} from './actions/index'
+import { applyNumber, changeOperation, clearDisplay} from './actions/index'
 import './App.css';
 import  reducer  from './reducers/index' 
 import TotalDisplay from './components/TotalDisplay';
@@ -55,7 +55,7 @@ const [state, dispatch] = useReducer(reducer, initialState )
             </div>
 
             <div className="row ce_button">
-              <CalcButton value={"CE"}/>
+              <CalcButton onClick={ () => dispatch(clearDisplay()) } value={"CE"}/>
             </div>
 
           </form>
